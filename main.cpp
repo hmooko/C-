@@ -32,7 +32,7 @@ int main() {
     for (int i = 0; i < M; i++) {
         int x1, y1, x2, y2;
         cin >> x1 >> y1 >> x2 >> y2;
-        int x1 = x1 - 1, y1 = y1 - 1, x2 = x2 - 1, y2 = y2 - 1;
+        x1 -= 1; y1 -= 1; x2 -= 1; y2 -= 1;
         cout << s[x2][y2] - s[x1 - 1][y2] - s[x2][y1 - 1] + s[x1 - 1][y1 - 1];
     } 
 
