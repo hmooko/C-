@@ -24,14 +24,18 @@ int main() {
             } else if (j < 1) {
                 s[i][j] = s[i - 1][j] + area[i][j];
             } else {
-                s[i][j] = s[i][j - 1] + s[i - 1][j] + s[i - 1][j - 1] + area[i][j];
+                s[i][j] = s[i][j - 1] + s[i - 1][j] - s[i - 1][j - 1] + area[i][j];
             }
         }
     }
-    cout << "\n" << s[0][0] << " " << s[1][0] << " " << s[0][1] << " " << s[1][1];
-    /* for (int i = 0; i < M; i++) {
-        cin >> 
-    } */
+    
+    for (int i = 0; i < M; i++) {
+        int x1, y1, x2, y2;
+        cin >> x1 >> y1 >> x2 >> y2;
+        int x1 = x1 - 1, y1 = y1 - 1, x2 = x2 - 1, y2 = y2 - 1;
+        cout << s[x2][y2] - s[x1 - 1][y2] - s[x2][y1 - 1] + s[x1 - 1][y1 - 1];
+    } 
+
 
     return 0;
 }
