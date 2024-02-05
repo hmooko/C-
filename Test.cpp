@@ -1,14 +1,15 @@
 #include <iostream>
 using namespace std;
 
-int A[1000000];
-int S[1000000];
+int A[1000000000];
+long S[1000000000];
 
 int main() {
+    ios_base :: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
 
     int N, M, count = 0;
-
-    cin >> N >> M;
 
     for (int i = 0; i < N; i++) {
         cin >> A[i];
@@ -17,7 +18,7 @@ int main() {
 
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-            if (i != j && (S[j] - S[i]) % M == 0) {
+            if ((S[j] - S[i]) % M == 0) {
                 count += 1;
             }
         }
